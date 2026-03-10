@@ -27,8 +27,8 @@
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['kunde'] . "</td>";
                 echo "<td>" . $row['kontaktperson'] . "</td>";
+                echo "<td>" . $row['Epost'] . "</td>";
                 echo "<td><a href='kontaktinfo.php?id=" . $row['id'] . "'>Mer info</a></td>";
                 echo "<td><a href='Deletekontakt.php?id=" . $row['id'] . "'>Slett</a></td>";
                 echo "<td><a href='updatekontakt.php?id=" . $row['id'] . "'>Oppdater</a></td>";
@@ -38,4 +38,5 @@
     </table>
     <a href="createkontakt.php">Ny kontaktperson</a>
 </body>
+
 </html>
