@@ -18,7 +18,7 @@
         <tr>
             <th>ID</th>
             <th>Navn på kunde</th>
-            <th>Navn på kontaktperson</th>
+            <th>Epost</th>
             <th>Mer info</th>
             <th>Slett</th>
             <th>Rediger</th>
@@ -28,14 +28,15 @@
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['kunde'] . "</td>";
-                echo "<td>" . $row['kontaktperson'] . "</td>";
+                echo "<td>" . $row['Epost'] . "</td>";
                 echo "<td><a href='kundeinfo.php?id=" . $row['id'] . "'>Mer info</a></td>";
                 echo "<td><a href='DeleteKunder.php?id=" . $row['id'] . "'>Slett</a></td>";
-                echo "<td><a href='update.php?id=" . $row['id'] . "'>Oppdater</a></td>";
+                echo "<td><a href='updatekunde.php?id=" . $row['id'] . "'>Oppdater</a></td>";
                 echo "</tr>";
             }
         ?>
     </table>
     <a href="createkunde.php">Ny kunde</a>
 </body>
+
 </html>
