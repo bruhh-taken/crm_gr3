@@ -8,8 +8,8 @@
 <body>
     <h1>Velkommen til CRM løsningen vår</h1>
     <p><a href="kunder.php">Se liste over våre kunder</a></p>
-    <p><a href="create.php">Se liste over våre ansatte og kontaktpersoner <a href="kontakt.php">Her</a></a></a></p>
+    <p><a href="kontakter.php">Se liste over våre ansatte og kontaktpersoner</a></p>
 </body>
-    Mi bombo
 
 </html>
+
