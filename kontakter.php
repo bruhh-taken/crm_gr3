@@ -30,7 +30,7 @@
                 echo "<td>" . $row['kontaktperson'] . "</td>";
                 echo "<td>" . $row['Epost'] . "</td>";
                 echo "<td><a href='kontaktinfo.php?id=" . $row['id'] . "'>Mer info</a></td>";
-                echo "<td><a href='Deletekontakt.php?id=" . $row['id'] . "'>Slett</a></td>";
+                echo "<td><a href='DeleteAnsatte.php?id=" . $row['id'] . "'>Slett</a></td>";
                 echo "<td><a href='updatekontakt.php?id=" . $row['id'] . "'>Oppdater</a></td>";
                 echo "</tr>";
             }
@@ -40,3 +40,4 @@
 </body>
 
 </html>
+
