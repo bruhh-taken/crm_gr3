@@ -10,4 +10,6 @@
     <p><a href="kunder.php">Se liste over våre kunder</a></p>
     <p><a href="create.php">Se liste over våre ansatte og kontaktpersoner <a href="kontakt.php">Her</a></a></a></p>
 </body>
+    Mi bombo
+
 </html>
