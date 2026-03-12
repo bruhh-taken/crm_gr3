@@ -1,23 +1,20 @@
 <?php 
 include "../db.php";
-$search = "";
-if(isset($_GET['search'])){
+
+if(isset($_GET['search']) && $_GET['search'] != ""){
     $search = $_GET['search'];
+
+    $sql = "SELECT * FROM kunder 
+            WHERE fornavn LIKE '%$search%' 
+            OR etternavn LIKE '%$search%' 
+            OR telefon LIKE '%$search%'";
+}else{
+    $sql = "SELECT * FROM kunder";
 }
 
-$sql = "SELECT * FROM kunder 
-        WHERE fornavn LIKE '%$search%' 
-        OR etternavn LIKE '%$search%' 
-        OR telefon LIKE '%$search%'";
-
-$result = $conn->query($sql);
-?> 
-<?php $sql = "SELECT * FROM kunder";
-
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
 $result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +27,7 @@ $result = $conn->query($sql);
     <form method="GET">
     <input type="text" name="search" placeholder="Søk etter kunde">
     <button type="submit">Søk</button>
+    <a href="kunde.php"><button type="button">Vis alle kunder</button></a>
 </form>
 <table border = "1">
         <tr>
