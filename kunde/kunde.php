@@ -1,6 +1,6 @@
 <?php 
-include "./db.php"
-?>
+include "../db.php"
+?> 
 <?php $sql = "SELECT * FROM kunder";
 
 // Utfører SQL-spørringen på databasen og lagrer resultatet i 

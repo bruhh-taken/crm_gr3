@@ -1,7 +1,8 @@
 
+<?php 
+include "../db.php"
+?> 
 <?php
-    include "db.php";
-// Hvis elev-id er sendt
     if (isset($_GET['id'])) { 
         $id = (int)$_GET['id'];
         // Hent kjæledyrets info
