@@ -1,5 +1,16 @@
 <?php 
-include "../db.php"
+include "../db.php";
+$search = "";
+if(isset($_GET['search'])){
+    $search = $_GET['search'];
+}
+
+$sql = "SELECT * FROM kunder 
+        WHERE fornavn LIKE '%$search%' 
+        OR etternavn LIKE '%$search%' 
+        OR telefon LIKE '%$search%'";
+
+$result = $conn->query($sql);
 ?> 
 <?php $sql = "SELECT * FROM kunder";
 
@@ -16,6 +27,10 @@ $result = $conn->query($sql);
     <title>Document</title>
 </head>
 <body>
+    <form method="GET">
+    <input type="text" name="search" placeholder="Søk etter kunde">
+    <button type="submit">Søk</button>
+</form>
 <table border = "1">
         <tr>
             <th>id</th>
