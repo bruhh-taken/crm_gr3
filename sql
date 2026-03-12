@@ -22,4 +22,12 @@ CREATE TABLE ansatt (
     telefon VARCHAR(20),
     epost VARCHAR(100),
     FOREIGN KEY (kunde_id) REFERENCES kunder(kunde_id)
-    ); -->
+    ); 
+CREATE TABLE kunde_ansatt (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    kunde_id INT NOT NULL,
+    ansatt_id INT NOT NULL,
+    FOREIGN KEY (kunde_id) REFERENCES kunder(kunde_id),
+    FOREIGN KEY (ansatt_id) REFERENCES ansatt(ansatt_id)
+    )
+    -->
