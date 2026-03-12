@@ -1,7 +1,7 @@
 # crm_gr3
 
 <!-- laget av trevor
- CREATE DATABASE CRM_GR3;
+CREATE DATABASE CRM_GR3;
 USE CRM_GR3;
 
 CREATE TABLE kunder (
@@ -21,5 +21,5 @@ CREATE TABLE ansatt (
     etternavn VARCHAR(50) NOT NULL,
     telefon VARCHAR(20),
     epost VARCHAR(100),
-    FOREIGN KEY (kunde_id) REFERENCES kunder(kunde_id,)
+    FOREIGN KEY (kunde_id) REFERENCES kunder(kunde_id)
     ); -->
