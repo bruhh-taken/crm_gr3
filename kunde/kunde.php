@@ -1,23 +1,20 @@
 <?php 
 include "../db.php";
-$search = "";
-if(isset($_GET['search'])){
+
+if(isset($_GET['search']) && $_GET['search'] != ""){
     $search = $_GET['search'];
+
+    $sql = "SELECT * FROM kunder 
+            WHERE fornavn LIKE '%$search%' 
+            OR etternavn LIKE '%$search%' 
+            OR telefon LIKE '%$search%'";
+}else{
+    $sql = "SELECT * FROM kunder";
 }
 
-$sql = "SELECT * FROM kunder 
-        WHERE fornavn LIKE '%$search%' 
-        OR etternavn LIKE '%$search%' 
-        OR telefon LIKE '%$search%'";
-
-$result = $conn->query($sql);
-?> 
-<?php $sql = "SELECT * FROM kunder";
-
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
 $result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +27,18 @@ $result = $conn->query($sql);
     <form method="GET">
     <input type="text" name="search" placeholder="Søk etter kunde">
     <button type="submit">Søk</button>
+    <a href="kunde.php"><button type="button">Vis alle kunder</button></a>
 </form>
 <table border = "1">
         <tr>
             <th>id</th>
             <th>fornavn</th>
             <th>etternavn</th>
-            <th>klasse</th>
+            <th>adresse</th>
+            <th>post nummer</th>
+            <th>telefon</th>
+            <th>epost</th>
+            <th>fødselsdato</th>
             <th>handlinger</th>
         </tr>
         <?php
@@ -50,7 +52,7 @@ $result = $conn->query($sql);
             echo "<td>" . $row['postnummer'] . "</td>";
             echo "<td>" . $row['telefon'] . "</td>";
             echo "<td>" . $row['epost'] . "</td>";
-            echo "<td>" . $row['fødelsdato'] . "</td>";
+            echo "<td>" . $row['fodelsdato'] . "</td>";
             echo "<td> <a href='deletekunde.php?kunde_id=" . $row['kunde_id'] ."'>slett</a> </td>";
             echo "<td> <a href='updatekunde.php?kunde_id=" . $row['kunde_id'] ."'>rediger</a> </td>";
             echo "</tr>";
@@ -105,5 +107,7 @@ button {
 
 </style>
 
+        <a href="createkunde.php"><button>legg til ny kunde</button></a>
+    <button></button>
 </body>
 </html>
