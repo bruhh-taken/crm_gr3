@@ -25,10 +25,10 @@ $result = $conn->query($sql);
 </head>
 <body>
     <form method="GET">
-    <input type="text" name="search" placeholder="Søk etter kunde">
-    <button type="submit">Søk</button>
-    <a href="kunde.php"><button type="button">Vis alle kunder</button></a>
-</form>
+        <input type="text" name="search" placeholder="Søk etter kunde">
+        <button type="submit">Søk</button>
+        <a href="kunde.php"><button type="button">Vis alle kunder</button></a>
+    </form>
 <table border = "1">
         <tr>
             <th>id</th>
