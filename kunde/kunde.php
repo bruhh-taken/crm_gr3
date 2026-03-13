@@ -7,8 +7,7 @@ if(isset($_GET['search'])){
 
 $sql = "SELECT * FROM kunder 
         WHERE fornavn LIKE '%$search%' 
-        OR etternavn LIKE '%$search%' 
-        OR telefon LIKE '%$search%'";
+        OR etternavn LIKE '%$search%' ";
 
 $result = $conn->query($sql);
 ?> 

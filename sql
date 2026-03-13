@@ -16,12 +16,10 @@ CREATE TABLE kunder (
 	);
 CREATE TABLE ansatt (
     ansatt_id INT AUTO_INCREMENT PRIMARY KEY,
-    kunde_id INT NOT NULL,
     fornavn VARCHAR(50) NOT NULL,
     etternavn VARCHAR(50) NOT NULL,
     telefon VARCHAR(20),
-    epost VARCHAR(100),
-    FOREIGN KEY (kunde_id) REFERENCES kunder(kunde_id)
+    epost VARCHAR(100)
     ); 
 CREATE TABLE kunde_ansatt (
     id INT AUTO_INCREMENT PRIMARY KEY,

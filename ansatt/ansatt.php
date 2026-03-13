@@ -24,7 +24,9 @@ $result = $conn->query($sql);
             <th>id</th>
             <th>fornavn</th>
             <th>etternavn</th>
-            <th>klasse</th>
+            <th>rolle</th>
+            <th>telefon</th>
+            <th>epost</th>
             <th>handlinger</th>
         </tr>
         <?php
@@ -34,6 +36,7 @@ $result = $conn->query($sql);
             echo "<td>" . $row['ansatt_id'] . "</td>";
             echo "<td>" . $row['fornavn'] . "</td>";
             echo "<td>" . $row['etternavn'] . "</td>";
+            echo "<td>" . $row['rolle'] . "</td>";
             echo "<td>" . $row['telefon'] . "</td>";
             echo "<td>" . $row['epost'] . "</td>";
             echo "<td> <a href='deleteansatt.php?ansatt_id=" . $row['ansatt_id'] ."'>slett</a> </td>";
@@ -42,6 +45,6 @@ $result = $conn->query($sql);
         }
         
         ?>
-    
+        <a href="createansatt.php"><button>legg til ny ansatt</button></a>
 </body>
 </html>
