@@ -1,23 +1,20 @@
 <?php 
 include "../db.php";
-$search = "";
-if(isset($_GET['search'])){
+
+if(isset($_GET['search']) && $_GET['search'] != ""){
     $search = $_GET['search'];
+
+    $sql = "SELECT * FROM kunder 
+            WHERE fornavn LIKE '%$search%' 
+            OR etternavn LIKE '%$search%' 
+            OR telefon LIKE '%$search%'";
+}else{
+    $sql = "SELECT * FROM kunder";
 }
 
-$sql = "SELECT * FROM kunder 
-        WHERE fornavn LIKE '%$search%' 
-        OR etternavn LIKE '%$search%' 
-        OR telefon LIKE '%$search%'";
-
-$result = $conn->query($sql);
-?> 
-<?php $sql = "SELECT * FROM kunder";
-
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
 $result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,9 +25,10 @@ $result = $conn->query($sql);
 </head>
 <body>
     <form method="GET">
-    <input type="text" name="search" placeholder="Søk etter kunde">
-    <button type="submit">Søk</button>
-</form>
+        <input type="text" name="search" placeholder="Søk etter kunde">
+        <button type="submit">Søk</button>
+        <a href="kunde.php"><button type="button">Vis alle kunder</button></a>
+    </form>
 <table border = "1">
         <tr>
             <th>id</th>
@@ -61,6 +59,54 @@ $result = $conn->query($sql);
         }
         
         ?>
+        
+    <style>
+        body {
+            margin-top: 2%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        input[type="text"] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: 1px solid #333333;
+        }
+
+        button {
+            padding: 8px;
+            margin-top: 8px;
+            margin-left: 4px;
+            margin-bottom: 10px;
+            background-color: rgb(214, 214, 214);
+            color: rgb(22, 22, 22);
+            font-weight: bold;
+            border: solid black 1px;
+            cursor: pointer;
+        }
+
+    </style>
+
         <a href="createkunde.php"><button>legg til ny kunde</button></a>
     <button></button>
 </body>

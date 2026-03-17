@@ -1,11 +1,17 @@
 <?php 
-include "../db.php"
-?>
+include "../db.php";
 
-<?php $sql = "SELECT * FROM ansatt";
+if(isset($_GET['search']) && $_GET['search'] != ""){
+    $search = $_GET['search'];
 
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
+    $sql = "SELECT * FROM kunder 
+            WHERE fornavn LIKE '%$search%' 
+            OR etternavn LIKE '%$search%' 
+            OR telefon LIKE '%$search%'";
+}else{
+    $sql = "SELECT * FROM kunder";
+}
+
 $result = $conn->query($sql);
 ?>
 
@@ -18,6 +24,11 @@ $result = $conn->query($sql);
     <title>Document</title>
 </head>
 <body>
+    <form method="GET">
+        <input type="text" name="search" placeholder="Søk etter kunde">
+        <button type="submit">Søk</button>
+        <a href="kunde.php"><button type="button">Vis alle kunder</button></a>
+    </form>
 
 <table border = "1">
         <tr>
@@ -42,6 +53,52 @@ $result = $conn->query($sql);
         }
         
         ?>
-    
+<style>
+    body {
+        margin-top: 2%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    input[type="text"] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: 1px solid #333333;
+    }
+
+    button {
+        padding: 8px;
+        margin-top: 8px;
+        margin-left: 4px;
+        margin-bottom: 10px;
+        background-color: rgb(214, 214, 214);
+        color: rgb(22, 22, 22);
+        font-weight: bold;
+        border: solid black 1px;
+        cursor: pointer;
+    }
+
+</style>
+
 </body>
 </html>
