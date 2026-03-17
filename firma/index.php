@@ -1,17 +1,22 @@
+<!-- laget av trevor -->
 <?php 
 include "../db.php";
+?>
+<?php
 $search = "";
 if(isset($_GET['search'])){
     $search = $_GET['search'];
 }
 
-$sql = "SELECT * FROM kunder 
-        WHERE fornavn LIKE '%$search%' 
-        OR etternavn LIKE '%$search%' ";
+$sql = "SELECT * FROM firma 
+        WHERE firma LIKE '%$search%' 
+        OR epost LIKE '%$search%' 
+        OR adresse LIKE '%$search%' 
+        ";
 
 $result = $conn->query($sql);
 ?> 
-<?php $sql = "SELECT * FROM kunder";
+<?php $sql = "SELECT * FROM firma";
 
 // Utfører SQL-spørringen på databasen og lagrer resultatet i 
 // variabelen $result
@@ -27,19 +32,17 @@ $result = $conn->query($sql);
 </head>
 <body>
     <form method="GET">
-    <input type="text" name="search" placeholder="Søk etter kunde">
+    <input type="text" name="search" placeholder="Søk etter Firma">
     <button type="submit">Søk</button>
 </form>
 <table border = "1">
         <tr>
-            <th>id</th>
-            <th>fornavn</th>
-            <th>etternavn</th>
-            <th>adresse</th>
-            <th>post nummer</th>
-            <th>telefon</th>
-            <th>epost</th>
-            <th>fødselsdato</th>
+            <th>ID</th>
+            <th>Firma</th>
+            <th>Adresse</th>
+            <th>Post nummer</th>
+            <th>Telefon</th>
+            <th>E-post</th>
             <th>handlinger</th>
         </tr>
         <?php
@@ -47,20 +50,18 @@ $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()){
             echo "<tr>";
             echo "<td>" . $row['kunde_id'] . "</td>";
-            echo "<td>" . $row['fornavn'] . "</td>";
-            echo "<td>" . $row['etternavn'] . "</td>";
+            echo "<td>" . $row['firma'] . "</td>";
             echo "<td>" . $row['adresse'] . "</td>";
             echo "<td>" . $row['postnummer'] . "</td>";
             echo "<td>" . $row['telefon'] . "</td>";
             echo "<td>" . $row['epost'] . "</td>";
-            echo "<td>" . $row['fodelsdato'] . "</td>";
-            echo "<td> <a href='deletekunde.php?kunde_id=" . $row['kunde_id'] ."'>slett</a> </td>";
-            echo "<td> <a href='updatekunde.php?kunde_id=" . $row['kunde_id'] ."'>rediger</a> </td>";
+            echo "<td> <a href='deletefirma.php?kunde_id=" . $row['kunde_id'] ."'>slett</a> </td>";
+            echo "<td> <a href='updatefirma.php?kunde_id=" . $row['kunde_id'] ."'>rediger</a> </td>";
             echo "</tr>";
         }
         
         ?>
-        <a href="createkunde.php"><button>legg til ny kunde</button></a>
+        <a href="createfirma.php"><button>legg til nytt firma</button></a>
     <button></button>
 </body>
 </html>

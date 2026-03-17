@@ -1,3 +1,4 @@
+<!-- laget av trevor -->
 <?php 
 include "../db.php"
 ?>
@@ -27,6 +28,8 @@ $result = $conn->query($sql);
             <th>rolle</th>
             <th>telefon</th>
             <th>epost</th>
+            <th>fødselsdato</th>
+            <th>firma nr</th>
             <th>handlinger</th>
         </tr>
         <?php
@@ -39,6 +42,8 @@ $result = $conn->query($sql);
             echo "<td>" . $row['rolle'] . "</td>";
             echo "<td>" . $row['telefon'] . "</td>";
             echo "<td>" . $row['epost'] . "</td>";
+            echo "<td>" . $row['fodselsdato'] . "</td>";
+            echo "<td>" . $row['kunde_id'] . "</td>";
             echo "<td> <a href='deleteansatt.php?ansatt_id=" . $row['ansatt_id'] ."'>slett</a> </td>";
             echo "<td> <a href='updateansatt.php?ansatt_id=" . $row['ansatt_id'] ."'>rediger</a> </td>";
             echo "</tr>";

@@ -1,3 +1,4 @@
+<!-- laget av trevor -->
 <?php
 include "../db.php"
 ?> 
@@ -10,7 +11,7 @@ if (isset($_GET['ansatt_id'])) {
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
         echo "<p>Fant ikke ansatte.</p>";
-        echo "<a href='ansatt.php'>Tilbake</a>";
+        echo "<a href='.'>Tilbake</a>";
         exit();
     }
     $elev = $result->fetch_assoc();
@@ -21,7 +22,7 @@ if (isset($_POST['bekreft'])) {
     $sql = "DELETE FROM ansatt WHERE ansatt_id=$id";
     if ($conn->query($sql) === TRUE) {
         echo "<p>ansatt slettet!</p>";
-        echo "<a href='ansatt.php'>Tilbake til listen</a>";
+        echo "<a href='.'>Tilbake til listen</a>";
         exit();
     } else {
         echo "Feil: " . $conn->error;
@@ -40,7 +41,7 @@ if (isset($_POST['bekreft'])) {
 </head>
 <body>
 <nav class="nav">
-    <a href="ansatt.php" ><button class="tilbake">tilbake</button></a>
+    <a href="." ><button class="tilbake">tilbake</button></a>
 </nav>
     <h1>info:</h1>
     <h3>fornavn: </h3> <?php echo $elev['fornavn']; ?>
@@ -50,7 +51,7 @@ if (isset($_POST['bekreft'])) {
     <h3>epost: </h3><?php echo $elev['epost']; ?> 
     <br><br>
     <form action="" method="post"><button type="submit" name="bekreft" class="">bekreft sletting</button></form>
-    <a href="ansatt.php"><button class="">Avbryt</button></a>
+    <a href="."><button class="">Avbryt</button></a>
 
 <br><br>
 

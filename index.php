@@ -12,6 +12,6 @@ include "db.php"
 </head>
 <body>
     <a href="ansatt/ansatt.php">ansatt</a>
-    <a href="kunde/kunde.php">kunde</a>
+    <a href="firma/firma.php">firma</a>
 </body>
 </html>
