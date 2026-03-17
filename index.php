@@ -11,8 +11,8 @@ include "db.php"
     <title>Document</title>
 </head>
 <body>
-    <a href="ansatt/ansatt.php">ansatt</a>
-    <a href="kunde/kunde.php">kunde</a>
+    <a href="ansatt/"><button>ansatt</button></a>
+    <a href="firma/"><button>firma</button></a>
 
 
     <style>

@@ -19,7 +19,7 @@ $result = $conn->query($sql);
     <title>Document</title>
 </head>
 <body>
-
+<a href=".."><button>tilbake</button></a>
 <table border = "1">
         <tr>
             <th>id</th>
@@ -50,6 +50,7 @@ $result = $conn->query($sql);
         }
         
         ?>
+        </table>
         <a href="createansatt.php"><button>legg til ny ansatt</button></a>
 </body>
 </html>

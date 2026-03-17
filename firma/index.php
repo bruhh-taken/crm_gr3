@@ -31,6 +31,7 @@ $result = $conn->query($sql);
     <title>Document</title>
 </head>
 <body>
+    <a href=".."><button>tilbake</button></a>
     <form method="GET">
     <input type="text" name="search" placeholder="Søk etter Firma">
     <button type="submit">Søk</button>
@@ -61,7 +62,7 @@ $result = $conn->query($sql);
         }
         
         ?>
+        </table>
         <a href="createfirma.php"><button>legg til nytt firma</button></a>
-    <button></button>
 </body>
 </html>
