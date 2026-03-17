@@ -1,3 +1,4 @@
+<!-- laget av aiden -->
 <?php
 include '../db.php';
 
@@ -126,6 +127,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['lagre']) && isset($_P
     <?php endif; ?>
 
     <br>
-    <a href="kunde.php">Tilbake til oversikt</a>
+    <a href="index.php">Tilbake til oversikt</a>
 </body>
 </html>
