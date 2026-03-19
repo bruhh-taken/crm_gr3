@@ -7,7 +7,11 @@ $search = "";
 if(isset($_GET['search'])){
     $search = $_GET['search'];
 }
+$sql = "SELECT * FROM firma ORDER BY fornavn ASC";
 
+// Utfører SQL-spørringen på databasen og lagrer resultatet i 
+// variabelen $result
+$result = $conn->query($sql);
 $sql = "SELECT * FROM firma 
         WHERE firma LIKE '%$search%' 
         OR epost LIKE '%$search%' 
@@ -16,11 +20,7 @@ $sql = "SELECT * FROM firma
 
 $result = $conn->query($sql);
 ?> 
-<?php $sql = "SELECT * FROM firma ORDER BY fornavn ASC";
-
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
-$result = $conn->query($sql);
+<?php 
 ?>
 <!DOCTYPE html>
 <html lang="en">
