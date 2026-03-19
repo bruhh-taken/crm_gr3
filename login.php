@@ -1,3 +1,5 @@
+<!-- laget av Oliver -->
+ 
 <?php
 session_start();
 

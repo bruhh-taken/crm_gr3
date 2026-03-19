@@ -1,3 +1,4 @@
+laget av Trevor
 CREATE DATABASE crm_gr3;
 USE crm_gr3;
 
@@ -22,6 +23,8 @@ CREATE TABLE ansatt (
     FOREIGN KEY (kunde_id) REFERENCES firma(kunde_id)
 );
 
+
+Laget av Oliver
 CREATE TABLE brukere (
     id INT AUTO_INCREMENT PRIMARY KEY,
     brukernavn VARCHAR(100) NOT NULL UNIQUE,
