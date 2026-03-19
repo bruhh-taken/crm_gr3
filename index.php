@@ -2,6 +2,14 @@
 include "db.php"
 ?>
 
+<?php
+session_start();
+if (!isset($_SESSION["bruker"])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +21,7 @@ include "db.php"
 <body>
     <a href="ansatt/"><button>ansatt</button></a>
     <a href="firma/"><button>firma</button></a>
+    <a href="login.php?logout=1">Logg ut</a>
 
 
     <style>
