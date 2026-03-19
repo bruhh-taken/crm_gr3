@@ -3,7 +3,7 @@
 include "../db.php"
 ?>
 
-<?php $sql = "SELECT * FROM ansatt";
+<?php $sql = "SELECT * FROM ansatt ORDER BY fornavn ASC";
 
 // Utfører SQL-spørringen på databasen og lagrer resultatet i 
 // variabelen $result

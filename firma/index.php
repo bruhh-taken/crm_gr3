@@ -16,7 +16,7 @@ $sql = "SELECT * FROM firma
 
 $result = $conn->query($sql);
 ?> 
-<?php $sql = "SELECT * FROM firma";
+<?php $sql = "SELECT * FROM firma ORDER BY fornavn ASC";
 
 // Utfører SQL-spørringen på databasen og lagrer resultatet i 
 // variabelen $result
