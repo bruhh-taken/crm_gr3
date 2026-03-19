@@ -22,4 +22,11 @@ CREATE TABLE ansatt (
     kunde_id INT,
     FOREIGN KEY (kunde_id) REFERENCES firma(kunde_id)
 );
- 
+
+
+Laget av Oliver
+CREATE TABLE brukere (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    brukernavn VARCHAR(100) NOT NULL UNIQUE,
+    passord VARCHAR(255) NOT NULL
+);

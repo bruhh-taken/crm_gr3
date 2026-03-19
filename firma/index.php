@@ -18,9 +18,11 @@ $sql = "SELECT * FROM firma
         OR adresse LIKE '%$search%' 
         ";
 
+$sql = "SELECT * FROM firma ORDER BY fornavn ASC";
+
+// Utfører SQL-spørringen på databasen og lagrer resultatet i 
+// variabelen $result
 $result = $conn->query($sql);
-?> 
-<?php 
 ?>
 <!DOCTYPE html>
 <html lang="en">
