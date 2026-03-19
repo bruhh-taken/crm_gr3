@@ -7,7 +7,11 @@ $search = "";
 if(isset($_GET['search'])){
     $search = $_GET['search'];
 }
+$sql = "SELECT * FROM firma ORDER BY fornavn ASC";
 
+// Utfører SQL-spørringen på databasen og lagrer resultatet i 
+// variabelen $result
+$result = $conn->query($sql);
 $sql = "SELECT * FROM firma 
         WHERE firma LIKE '%$search%' 
         OR epost LIKE '%$search%' 
@@ -26,7 +30,8 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>firma</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href=".."><button>tilbake</button></a>
