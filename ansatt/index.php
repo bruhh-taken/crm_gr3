@@ -16,7 +16,8 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ansatte</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a href=".."><button>tilbake</button></a>
@@ -44,8 +45,8 @@ $result = $conn->query($sql);
             echo "<td>" . $row['epost'] . "</td>";
             echo "<td>" . $row['fodselsdato'] . "</td>";
             echo "<td>" . $row['kunde_id'] . "</td>";
-            echo "<td> <a href='deleteansatt.php?ansatt_id=" . $row['ansatt_id'] ."'>slett</a> </td>";
-            echo "<td> <a href='updateansatt.php?ansatt_id=" . $row['ansatt_id'] ."'>rediger</a> </td>";
+            echo "<td> <a href='deleteansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button>slett</button></a> </td>";
+            echo "<td> <a href='updateansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button>rediger</button></a> </td>";
             echo "</tr>";
         }
         
