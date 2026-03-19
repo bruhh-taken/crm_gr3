@@ -11,9 +11,10 @@ $firma_result = $conn->query("SELECT kunde_id, firma FROM firma");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>create ansatt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="container">
 <nav class="nav">
     <a href="." ><button class="tilbake">tilbake</button></a>
 </nav>
