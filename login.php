@@ -22,7 +22,7 @@ $visning = isset($_GET["registrer"]) ? "registrer" : "login";
 
 // Login
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
-    include "db.php";
+    include "include/db.php";
 
     $brukernavn = trim($_POST["brukernavn"]);
     $passord = $_POST["passord"];
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 
 // Registrer
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrer"])) {
-    include "db.php";
+    include "include/db.php";
     $visning = "registrer";
 
     $brukernavn = trim($_POST["brukernavn"]);
