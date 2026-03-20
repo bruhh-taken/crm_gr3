@@ -1,4 +1,4 @@
-laget av Trevor
+-- laget av Trevor
 CREATE DATABASE crm_gr3;
 USE crm_gr3;
  
@@ -22,8 +22,8 @@ CREATE TABLE ansatt (
     kunde_id INT,
     FOREIGN KEY (kunde_id) REFERENCES firma(kunde_id)
 );
-eksempeldata
-laget av Trevor med hjelp av chatgpt
+-- eksempeldata
+-- laget av Trevor med hjelp av chatgpt
 INSERT INTO firma (firma, epost, telefon, adresse, postnummer) VALUES
 ('Tech Solutions AS', 'kontakt@tech.no', '12345678', 'Karl Johans gate 1', '0154'),
 ('Nordic Bygg AS', 'post@nordicbygg.no', '87654321', 'Storgata 10', '0184'),
@@ -35,10 +35,19 @@ INSERT INTO ansatt (fornavn, etternavn, telefon, epost, rolle, fodselsdato, kund
 ('Anne', 'Olsen', '90000004', 'anne@tech.no', 'Support', '1995-07-30', 1),
 ('Lars', 'Berg', '90000005', 'lars@nordicbygg.no', 'Snekker', '1988-11-02', 2);
 
-Laget av Oliver
+-- Laget av Oliver
 CREATE TABLE brukere (
     id INT AUTO_INCREMENT PRIMARY KEY,
     brukernavn VARCHAR(100) NOT NULL UNIQUE,
     passord VARCHAR(255) NOT NULL
 );
+
+-- eksempeldata
+-- Laget av Oliver med hjelp av chatgpt
+INSERT INTO brukere (brukernavn, passord) VALUES
+('aiden', 'aiden1'),
+('trevor', 'trevor1'),
+('oliver', 'oliver1'),
+('ola', 'ola1'),
+('baka', 'baka-sin-2-er');
 
