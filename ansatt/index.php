@@ -1,9 +1,25 @@
 <!-- laget av trevor -->
+<!-- search laget av Aiden -->
 <?php 
 include "../include/db.php"
-?>
 
-<?php $sql = "SELECT * FROM ansatt ORDER BY fornavn ASC";
+$search = "";
+if(isset($_GET['search'])){
+    $search = $_GET['search'];
+}
+$sql = "SELECT * FROM ansatt ORDER BY fornavn ASC";
+
+// Utfører SQL-spørringen på databasen og lagrer resultatet i 
+// variabelen $result
+$result = $conn->query($sql);
+$sql = "SELECT * FROM ansatt 
+        WHERE fornavn LIKE '%$search%' 
+        OR etternavn LIKE '%$search%' 
+        OR rolle LIKE '%$search%' 
+        ";
+
+
+$sql = "SELECT * FROM ansatt ORDER BY fornavn ASC";
 
 // Utfører SQL-spørringen på databasen og lagrer resultatet i 
 // variabelen $result
