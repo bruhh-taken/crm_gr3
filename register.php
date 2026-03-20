@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $brukernavn = trim($_POST["brukernavn"]);
     $passord = $_POST["passord"];
 
-    // Sjekk om brukernavn allerede finnes
     $stmt = $conn->prepare("SELECT id FROM brukere WHERE brukernavn = ?");
     $stmt->bind_param("s", $brukernavn);
     $stmt->execute();
@@ -20,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->num_rows > 0) {
         $feil = "Brukernavn er allerede tatt.";
     } else {
-        // Hash passordet og lagre
         $hashet = password_hash($passord, PASSWORD_DEFAULT);
         $stmt2 = $conn->prepare("INSERT INTO brukere (brukernavn, passord) VALUES (?, ?)");
         $stmt2->bind_param("ss", $brukernavn, $hashet);
@@ -35,28 +33,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Registrer bruker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Registrer bruker</h2>
+    <div class="container">
+        <h2>Registrer bruker</h2>
 
-    <?php if ($feil): ?>
-        <p style="color: red;"><?= htmlspecialchars($feil) ?></p>
-    <?php endif; ?>
-    <?php if ($suksess): ?>
-        <p style="color: green;"><?= $suksess ?></p>
-    <?php endif; ?>
+        <?php if ($feil): ?>
+            <p class="feil"><?= htmlspecialchars($feil) ?></p>
+        <?php endif; ?>
+        <?php if ($suksess): ?>
+            <p class="suksess"><?= $suksess ?></p>
+        <?php endif; ?>
 
-    <form method="POST" action="register.php">
-        <label>Brukernavn:</label><br>
-        <input type="text" name="brukernavn" required><br><br>
+        <form method="POST" action="register.php">
+            <label>Brukernavn:</label><br>
+            <input type="text" name="brukernavn" required><br><br>
 
-        <label>Passord:</label><br>
-        <input type="password" name="passord" required><br><br>
+            <label>Passord:</label><br>
+            <input type="password" name="passord" required><br><br>
 
-        <button type="submit">Registrer</button>
-    </form>
+            <button type="submit">Registrer</button>
+        </form>
 
-    <br>
-    <a href="login.php">Allerede bruker? Logg inn</a>
+        <br>
+        <a href="login.php">Allerede bruker? Logg inn</a>
+    </div>
 </body>
 </html>
