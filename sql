@@ -43,3 +43,11 @@ CREATE TABLE brukere (
     passord VARCHAR(255) NOT NULL
 );
 
+-- eksempeldata
+-- laget av Oliver med hjelp av chatgpt
+INSERT INTO brukere (brukernavn, passord) VALUES
+('oliver', 'oliver1'),
+('trevor', 'trevor1'),
+('aiden', 'aiden1');
+
+
