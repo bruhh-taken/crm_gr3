@@ -6,7 +6,7 @@ $feil = "";
 $suksess = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include "db.php";
+    include "include/db.php";
 
     $brukernavn = trim($_POST["brukernavn"]);
     $passord = $_POST["passord"];
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p style="color: green;"><?= $suksess ?></p>
     <?php endif; ?>
 
-    <form method="POST" action="register.php">
+    <form method="POST" action="registrer.php">
         <label>Brukernavn:</label><br>
         <input type="text" name="brukernavn" required><br><br>
 
