@@ -1,4 +1,5 @@
-<!-- laget av Aiden -->
+<!-- laget av trevor -->
+<!-- search laget av Aiden -->
 <?php 
 include "../db.php";
 ?>
@@ -18,7 +19,7 @@ $sql = "SELECT * FROM firma
         OR adresse LIKE '%$search%' 
         ";
 
-// laget av trevor
+
 
 $sql = "SELECT * FROM firma ORDER BY firma ASC";
 
