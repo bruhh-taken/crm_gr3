@@ -1,6 +1,6 @@
 <!-- laget av aiden -->
 <?php
-include "../db.php";
+include "../include/db.php";
 ?>
  
 <?php
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oppdater firma</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../iclude/style.css">
 </head>
 <body class="container">
     <nav class="nav">

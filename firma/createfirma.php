@@ -1,6 +1,6 @@
 <!-- laget av trevor -->
 <?php 
-include "../db.php"
+include "../include/db.php"
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@ include "../db.php"
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>create firma</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../iclude/style.css">
 </head>
 <body>
 <nav class="nav">

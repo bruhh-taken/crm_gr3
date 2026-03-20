@@ -1,6 +1,6 @@
 <!-- laget av trevor -->
 <?php
-include "../db.php"
+include "../include/db.php"
 ?>
 <?php
 $ansatt_id = intval($_GET['ansatt_id']);
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Henter inntastede data
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>oppdater ansatt</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../iclude/style.css">
 </head>
 <body class="container">
     <nav class="nav">

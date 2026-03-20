@@ -1,4 +1,9 @@
 <?php
+// $host = "localhost";
+// $user = "db_im24tre1402"; // Brukernavnet til databasen
+// $password = ""; // Ditt passord
+// $db = "crm_gr3";  // Navnet på databasen
+
 $host = "localhost";
 $user = "root"; // Brukernavnet til databasen
 $password = ""; // Ditt passord
