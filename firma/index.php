@@ -1,30 +1,23 @@
 <!-- laget av trevor -->
 <!-- search laget av Aiden -->
 <?php 
-include "../include/db.php";
-?>
-<?php
+include "../db.php";
+
 $search = "";
-if(isset($_GET['search'])){
+if (isset($_GET['search'])) {
     $search = $_GET['search'];
 }
-$sql = "SELECT * FROM firma ORDER BY firma ASC";
 
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
-$result = $conn->query($sql);
-$sql = "SELECT * FROM firma 
-        WHERE firma LIKE '%$search%' 
-        OR epost LIKE '%$search%' 
-        OR adresse LIKE '%$search%' 
-        ";
+if ($search != "") {
+    $sql = "SELECT * FROM firma 
+            WHERE firma LIKE '%$search%' 
+            OR epost LIKE '%$search%' 
+            OR adresse LIKE '%$search%' 
+            ORDER BY firma ASC";
+} else {
+    $sql = "SELECT * FROM firma ORDER BY firma ASC";
+}
 
-
-
-$sql = "SELECT * FROM firma ORDER BY firma ASC";
-
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -34,12 +27,12 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>firma</title>
-    <link rel="stylesheet" href="../include/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href=".."><button>tilbake</button></a>
     <form method="GET">
-    <input type="text" name="search" placeholder="Søk etter Firma">
+    <input type="text" name="search" placeholder="Søk etter firma" value="<?php echo htmlspecialchars($search); ?>">
     <button type="submit">Søk</button>
 </form>
 <table border = "1">
