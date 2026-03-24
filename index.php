@@ -24,6 +24,6 @@ if (!isset($_SESSION["bruker"])) {
     <a href="ansatt/"><button class="knappindex">ansatt</button></a>
     <a href="firma/"><button class="knappindex">firma</button></a><br>
     <a href="login.php?logout=1"><button class="knappindex">Logg ut</button></a><br>
-    <a href="login.php?registrer=1"><button class="knappindex">Legg til ny bruker</button></a>
+    <a href="registrer.php"><button class="knappindex">Legg til ny bruker</button></a>
 </body>
 </html>
