@@ -4,7 +4,6 @@ body {
     padding: 20px;
 }
 
-/* Container (bruk på alle sider) */
 .container {
     background-color: white;
     padding: 20px;
@@ -13,7 +12,6 @@ body {
     border: 1px solid #ccc;
 }
 
-/* Tabell */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -33,7 +31,6 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Skjema */
 form {
     margin-top: 10px;
 }
@@ -44,9 +41,12 @@ input, select {
     margin-bottom: 10px;
 }
 
-/* Knapper */
 button {
     padding: 6px 10px;
     margin-top: 5px;
     cursor: pointer;
+}
+.knappindex{
+    margin: 50px;
+
 }
