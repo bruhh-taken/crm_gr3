@@ -11,7 +11,7 @@ include "../include/db.php"
     <title>create firma</title>
     <link rel="stylesheet" href="../include/style.css">
 </head>
-<body>
+<body class="container">
 <nav class="nav">
     <a href="." ><button class="tilbake">tilbake</button></a>
 </nav>

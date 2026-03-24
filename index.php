@@ -1,3 +1,4 @@
+<!-- laget av trevor -->
 <?php 
 include "include/db.php"
 ?>

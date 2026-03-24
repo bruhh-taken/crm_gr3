@@ -39,10 +39,11 @@ if (isset($_POST['bekreft'])) {
     <title>firma sletting</title>
     <link rel="stylesheet" href="../include/style.css">
 </head>
-<body>
+<body class="container">
 <nav class="nav">
     <a href="." ><button class="tilbake">tilbake</button></a>
 </nav>
+
     <h1>Info:</h1>
     <h3>Firma: </h3> <?php echo $elev['firma']; ?>
     <h3>Adresse: </h3><?php echo $elev['adresse']; ?> 
