@@ -1,3 +1,4 @@
+<!-- laget av trevor -->
 <?php
 // $host = "localhost:3306";
 // $user = "db_im24tre1402"; // Brukernavnet til databasen
