@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrer"])) {
     </form>
 
     <br>
-    <a href="login.php?registrer=1">Registrer bruker</a>
+
 
 <?php else: ?>
 

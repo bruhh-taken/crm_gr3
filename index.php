@@ -20,8 +20,9 @@ if (!isset($_SESSION["bruker"])) {
 </head>
 <body>
     <a href="ansatt/"><button>ansatt</button></a>
-    <a href="firma/"><button>firma</button></a>
-    <a href="login.php?logout=1">Logg ut</a>
+    <a href="firma/"><button>firma</button></a><br>
+    <a href="login.php?logout=1">Logg ut</a><br>
+    <a href="login.php?registrer=1">Legg til ny bruker</a>
 
 
     <style>
