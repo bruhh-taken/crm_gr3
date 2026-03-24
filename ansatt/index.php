@@ -1,30 +1,25 @@
 <!-- laget av trevor -->
 <!-- search laget av Aiden -->
 <?php 
-include "../include/db.php"
+include "../include/db.php";
 
 $search = "";
-if(isset($_GET['search'])){
+if (isset($_GET['search'])) {
     $search = $_GET['search'];
 }
-$sql = "SELECT * FROM ansatt ORDER BY fornavn ASC";
 
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
+if ($search != "") {
+    $sql = "SELECT * FROM ansatt 
+            WHERE fornavn LIKE '%$search%' 
+            OR etternavn LIKE '%$search%' 
+            OR rolle LIKE '%$search%' 
+            ORDER BY fornavn ASC";
+} else {
+    $sql = "SELECT * FROM ansatt ORDER BY fornavn ASC";
+}
+
 $result = $conn->query($sql);
-$sql = "SELECT * FROM ansatt 
-        WHERE fornavn LIKE '%$search%' 
-        OR etternavn LIKE '%$search%' 
-        OR rolle LIKE '%$search%' 
-        ";
-
-
-$sql = "SELECT * FROM ansatt ORDER BY fornavn ASC";
-
-// Utfører SQL-spørringen på databasen og lagrer resultatet i 
-// variabelen $result
-$result = $conn->query($sql);
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +32,12 @@ $result = $conn->query($sql);
 </head>
 <body>
 <a href=".."><button>tilbake</button></a>
+
+<form method="GET" action="">
+    <input type="text" name="search" placeholder="Søk etter ansatt..." value="<?php echo htmlspecialchars($search); ?>">
+    <button type="submit">Søk</button>
+</form>
+
 <table border = "1">
         <tr>
             <th>id</th>
