@@ -58,6 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <br>
-    <a href="login.php">Allerede bruker? Logg inn</a>
+    <a href="index.php">Tilbake</a>
 </body>
 </html>
