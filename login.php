@@ -33,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     $result = $stmt->get_result();
 
     if ($row = $result->fetch_assoc()) {
-        if (password_verify($passord, $row["passord"])) {
-            $_SESSION["bruker"] = $brukernavn;
-            header("Location: index.php");
-            exit();
-        }
+        if ($passord === $row["passord"]) {
+        $_SESSION["bruker"] = $brukernavn;
+        header("Location: index.php");
+        exit();
     }
+}
     $feil = "Feil brukernavn eller passord.";
 }
 
