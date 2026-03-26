@@ -31,6 +31,8 @@ $result = $conn->query($sql);
 </head>
 <body>
     <a href=".."><button>tilbake</button></a>
+    <h1>Oversikt over alle firmaer</h1>
+
     <form method="GET">
     <input type="text" name="search" placeholder="Søk etter firma" value="<?php echo htmlspecialchars($search); ?>">
     <button type="submit">Søk</button>
