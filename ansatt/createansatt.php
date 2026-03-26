@@ -6,7 +6,7 @@ include "../include/db.php"
 $firma_result = $conn->query("SELECT kunde_id, firma FROM firma");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
