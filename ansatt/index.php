@@ -32,7 +32,7 @@ $result = $conn->query($sql);
 </head>
 <body>
 <a href=".."><button>tilbake</button></a>
-
+<h1>Oversikt over alle ansatte</h1>
 <form method="GET" action="">
     <input type="text" name="search" placeholder="Søk etter ansatt..." value="<?php echo htmlspecialchars($search); ?>">
     <button type="submit">Søk</button>
