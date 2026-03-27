@@ -62,8 +62,8 @@ $result = $conn->query($sql);
             echo "<td>" . $row['epost'] . "</td>";
             echo "<td>" . $row['fodselsdato'] . "</td>";
             echo "<td>" . $row['kunde_id'] . "</td>";
-            echo "<td> <a href='deleteansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button>slett</button></a> </td>";
-            echo "<td> <a href='updateansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button>rediger</button></a> </td>";
+            echo "<td> <a href='deleteansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button>slett</button></a>
+            <a href='updateansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button>rediger</button></a> </td>";
             echo "</tr>";
         }
         

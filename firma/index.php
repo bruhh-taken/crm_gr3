@@ -57,8 +57,8 @@ $result = $conn->query($sql);
             echo "<td>" . $row['postnummer'] . "</td>";
             echo "<td>" . $row['telefon'] . "</td>";
             echo "<td>" . $row['epost'] . "</td>";
-            echo "<td> <a href='deletefirma.php?kunde_id=" . $row['kunde_id'] ."'><button>slett</button></a> </td>";
-            echo "<td> <a href='updatefirma.php?kunde_id=" . $row['kunde_id'] ."'><button>rediger</button></a> </td>";
+            echo "<td> <a href='deletefirma.php?kunde_id=" . $row['kunde_id'] ."'><button>slett</button></a>
+ <a href='updatefirma.php?kunde_id=" . $row['kunde_id'] ."'><button>rediger</button></a> </td>";
             echo "</tr>";
         }
         
