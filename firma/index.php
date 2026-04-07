@@ -64,6 +64,6 @@ $result = $conn->query($sql);
         
         ?>
         </table> 
-        <a href="createfirma.php"><button>legg til nytt firma</button></a>
+        <a href="createfirma.php"><button class="ny">legg til nytt firma</button></a>
 </body>
 </html>

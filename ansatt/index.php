@@ -62,13 +62,13 @@ $result = $conn->query($sql);
             echo "<td>" . $row['epost'] . "</td>";
             echo "<td>" . $row['fodselsdato'] . "</td>";
             echo "<td>" . $row['kunde_id'] . "</td>";
-            echo "<td> <a href='deleteansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button>slett</button></a>
+            echo "<td> <a href='deleteansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button >slett</button></a>
             <a href='updateansatt.php?ansatt_id=" . $row['ansatt_id'] ."'><button>rediger</button></a> </td>";
             echo "</tr>";
         }
         
         ?>
         </table>
-        <a href="createansatt.php"><button>legg til ny ansatt</button></a>
+        <a href="createansatt.php"><button class="ny">legg til ny ansatt</button></a>
 </body>
 </html>

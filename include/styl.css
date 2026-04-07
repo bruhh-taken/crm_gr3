@@ -20,7 +20,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #ccc;
+    border: 1px solid rgb(235, 235, 235);
     padding: 8px;
 }
 
@@ -30,6 +30,9 @@ th {
 
 tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+tr:hover{
+    background-color: rgb(207, 216, 219);
 }
 
 form {
@@ -75,7 +78,7 @@ button {
     margin-left: 15px;
 }
 .loginknapp:hover {
-    background-color: #97ca99;
+    background-color: #e7f7e8;
 
     transform: scale(1.06);
 }
@@ -89,5 +92,16 @@ button {
 }
 .overskirftindex{
     text-align: center;
+}
+.ny{
+font-size: 16px;
+padding: 20px;
+border: 2px solid #8f9091; /* bytt #3498db til ønsket farge */
+border-radius: 6px;
+}
+.ny:hover{
+    transform: scale(1.04);
+    transition: 200ms;
+    background-color: rgb(232, 255, 223);
 }
 
