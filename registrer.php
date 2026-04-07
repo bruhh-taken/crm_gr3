@@ -21,9 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $feil = "Brukernavn er allerede tatt.";
     } else {
         // Hash passordet og lagre
-        $hashet = password_hash($passord, PASSWORD_DEFAULT);
         $stmt2 = $conn->prepare("INSERT INTO brukere (brukernavn, passord) VALUES (?, ?)");
-        $stmt2->bind_param("ss", $brukernavn, $hashet);
+        $stmt2->bind_param("ss", $brukernavn, $passord);
         $stmt2->execute();
         $suksess = "Bruker opprettet! <a href='login.php'>Logg inn her</a>.";
     }
