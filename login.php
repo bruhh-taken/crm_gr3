@@ -55,16 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrer"])) {
     $stmt->execute();
     $stmt->store_result();
 
-    if ($stmt->num_rows > 0) {
-        $feil = "Brukernavn er allerede tatt.";
-    } else {
-        $hashet = password_hash($passord, PASSWORD_DEFAULT);
-        $stmt2 = $conn->prepare("INSERT INTO brukere (brukernavn, passord) VALUES (?, ?)");
-        $stmt2->bind_param("ss", $brukernavn, $hashet);
-        $stmt2->execute();
-        $suksess = "Bruker opprettet! Logg inn nedenfor.";
-        $visning = "login";
-    }
+
 }
 ?>
 
