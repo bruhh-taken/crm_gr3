@@ -1,9 +1,9 @@
 <!-- laget av Oliver -->
- 
+
 <?php
 session_start();
-$feil = "";
-$suksess = "";
+// $feil = "";
+// $suksess = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include "include/db.php";
