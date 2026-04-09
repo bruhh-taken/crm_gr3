@@ -36,9 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 }
 ?>
 
-
-
-<?php if ($visning === "login"): ?>
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $visning === "registrer" ? "Registrer bruker" : "Logg inn" ?></title>
+    <link rel="stylesheet" href="include/login.css">
+</head>
+<body>
 
     <h2>Logg inn</h2>
 
@@ -58,42 +64,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 
         <button type="submit" name="login">Logg inn</button>
     </form>
-
-    <br>
-
-
-<?php else: ?>
-
-    <!DOCTYPE html>
-<html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $visning === "registrer" ? "Registrer bruker" : "Logg inn" ?></title>
-    <link rel="stylesheet" href="include/login.css">
-</head>
-<body>
-
-    <h2>Registrer bruker</h2>
-
-    <?php if ($feil): ?>
-        <p style="color: red;"><?= htmlspecialchars($feil) ?></p>
-    <?php endif; ?>
-
-    <form method="POST" action="login.php">
-        <label>Brukernavn:</label><br>
-        <input type="text" name="brukernavn" required><br><br>
-
-        <label>Passord:</label><br>
-        <input type="password" name="passord" required><br><br>
-
-        <button type="submit" name="registrer">Registrer</button>
-    </form>
-
-    <br>
-    <a href="login.php">Allerede bruker? Logg inn</a>
-
-<?php endif; ?>
-
 </body>
 </html>
