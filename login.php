@@ -14,10 +14,6 @@ if (isset($_SESSION["bruker"])) {
     exit();
 }
 
-$feil = "";
-$suksess = "";
-$visning = isset($_GET["registrer"]) ? "registrer" : "login";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     include "include/db.php";
 
@@ -39,40 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     $feil = "Feil brukernavn eller passord.";
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrer"])) {
-    include "include/db.php";
-    $visning = "registrer";
-
-    $brukernavn = trim($_POST["brukernavn"]);
-    $passord = $_POST["passord"];
-
-    $stmt = $conn->prepare("SELECT id FROM brukere WHERE brukernavn = ?");
-    $stmt->bind_param("s", $brukernavn);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        $feil = "Brukernavn er allerede tatt.";
-    } else {
-        $hashet = password_hash($passord, PASSWORD_DEFAULT);
-        $stmt2 = $conn->prepare("INSERT INTO brukere (brukernavn, passord) VALUES (?, ?)");
-        $stmt2->bind_param("ss", $brukernavn, $hashet);
-        $stmt2->execute();
-        $suksess = "Bruker opprettet! Logg inn nedenfor.";
-        $visning = "login";
-    }
-}
 ?>
 
-<!DOCTYPE html>
-<html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $visning === "registrer" ? "Registrer bruker" : "Logg inn" ?></title>
-    <link rel="stylesheet" href="include/login.css">
-</head>
-<body>
+
 
 <?php if ($visning === "login"): ?>
 
@@ -99,6 +64,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrer"])) {
 
 
 <?php else: ?>
+
+    <!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $visning === "registrer" ? "Registrer bruker" : "Logg inn" ?></title>
+    <link rel="stylesheet" href="include/login.css">
+</head>
+<body>
 
     <h2>Registrer bruker</h2>
 
