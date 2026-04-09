@@ -3,24 +3,17 @@
 <?php
 session_start();
 
-// Logout
 if (isset($_GET["logout"])) {
     session_destroy();
     header("Location: login.php");
     exit();
 }
 
-// Redirect if already logged in
 if (isset($_SESSION["bruker"])) {
     header("Location: index.php");
     exit();
 }
 
-$feil = "";
-$suksess = "";
-$visning = isset($_GET["registrer"]) ? "registrer" : "login";
-
-// Login
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     include "include/db.php";
 
@@ -41,33 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 }
     $feil = "Feil brukernavn eller passord.";
 }
-
-// Registrer
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrer"])) {
-    include "include/db.php";
-    $visning = "registrer";
-
-    $brukernavn = trim($_POST["brukernavn"]);
-    $passord = $_POST["passord"];
-
-    $stmt = $conn->prepare("SELECT id FROM brukere WHERE brukernavn = ?");
-    $stmt->bind_param("s", $brukernavn);
-    $stmt->execute();
-    $stmt->store_result();
-
-
-}
 ?>
 
-<!DOCTYPE html>
-<html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $visning === "registrer" ? "Registrer bruker" : "Logg inn" ?></title>
-    <link rel="stylesheet" href="include/login.css">
-</head>
-<body>
+
 
 <?php if ($visning === "login"): ?>
 
@@ -94,6 +63,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrer"])) {
 
 
 <?php else: ?>
+
+    <!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $visning === "registrer" ? "Registrer bruker" : "Logg inn" ?></title>
+    <link rel="stylesheet" href="include/login.css">
+</head>
+<body>
 
     <h2>Registrer bruker</h2>
 

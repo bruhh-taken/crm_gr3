@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $brukernavn = trim($_POST["brukernavn"]);
     $passord = $_POST["passord"];
 
-    // Sjekk om brukernavn allerede finnes
     $stmt = $conn->prepare("SELECT id FROM brukere WHERE brukernavn = ?");
     $stmt->bind_param("s", $brukernavn);
     $stmt->execute();
@@ -20,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->num_rows > 0) {
         $feil = "Brukernavn er allerede tatt.";
     } else {
-        // Hash passordet og lagre
         $stmt2 = $conn->prepare("INSERT INTO brukere (brukernavn, passord) VALUES (?, ?)");
         $stmt2->bind_param("ss", $brukernavn, $passord);
         $stmt2->execute();
