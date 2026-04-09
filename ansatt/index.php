@@ -33,6 +33,7 @@ $result = $conn->query($sql);
 <body>
 <a href=".."><button>tilbake</button></a>
 <h1>Oversikt over alle ansatte</h1>
+<a href="createansatt.php"><button class="ny">legg til ny ansatt</button></a>
 <form method="GET" action="">
     <input type="text" name="search" placeholder="Søk etter ansatt..." value="<?php echo htmlspecialchars($search); ?>">
     <button type="submit">Søk</button>
@@ -69,6 +70,6 @@ $result = $conn->query($sql);
         
         ?>
         </table>
-        <a href="createansatt.php"><button class="ny">legg til ny ansatt</button></a>
+        
 </body>
 </html>

@@ -1,3 +1,4 @@
+/* laget av trevor med hjelp av chatgpt */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -94,8 +95,8 @@ button {
     text-align: center;
 }
 .ny{
-font-size: 16px;
-padding: 20px;
+font-size: 14px;
+padding: 15px;
 border: 2px solid #8f9091; /* bytt #3498db til ønsket farge */
 border-radius: 6px;
 }

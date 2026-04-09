@@ -23,7 +23,7 @@ if (!isset($_SESSION["bruker"])) {
 <body>
     
     <nav class="loginnav">
-    <img src="logo/chatGPT_Image.png" height="80" alt="">
+    <img src="logo/chatgpt_Image.png" height="80" alt="">
     <a href="login.php?logout=1"><button class="loginknapp">Logg ut</button></a>
     <a href="registrer.php?registrer=1"><button class="loginknapp">Legg til ny bruker</button></a>
     </nav><br>
