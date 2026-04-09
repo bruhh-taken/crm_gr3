@@ -3,14 +3,12 @@
 <?php
 session_start();
 
-// Logout
 if (isset($_GET["logout"])) {
     session_destroy();
     header("Location: login.php");
     exit();
 }
 
-// Redirect if already logged in
 if (isset($_SESSION["bruker"])) {
     header("Location: index.php");
     exit();
@@ -20,7 +18,6 @@ $feil = "";
 $suksess = "";
 $visning = isset($_GET["registrer"]) ? "registrer" : "login";
 
-// Login
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     include "include/db.php";
 
@@ -42,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     $feil = "Feil brukernavn eller passord.";
 }
 
-// Registrer
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrer"])) {
     include "include/db.php";
     $visning = "registrer";
